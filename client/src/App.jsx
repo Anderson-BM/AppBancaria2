@@ -18,7 +18,7 @@ import CategoryBreakdown from './modules/dashboard/CategoryBreakdown.jsx';
 import { cardsApi } from './api/cards.js';
 import { expensesApi } from './api/expenses.js';
 import { fixedExpensesApi } from './api/fixedExpenses.js';
-import { settingsApi, downloadBackup } from './api/settings.js';
+import { settingsApi } from './api/settings.js';
 
 import { currentMonthKey, monthKeyFromDate } from './utils/format.js';
 import EditableName from './components/EditableName.jsx';
@@ -197,9 +197,6 @@ function MainApp({ auth }) {
         <div className="app-header-actions">
           <button className="icon-btn" onClick={toggleTheme} title="Cambiar tema">
             {settings.theme === 'dark' ? '☀' : '🌙'}
-          </button>
-          <button className="icon-btn" onClick={downloadBackup} title="Descargar respaldo">
-            ⬇
           </button>
           <button className="icon-btn" onClick={auth.logout} title="Cerrar sesión">
             ⏻

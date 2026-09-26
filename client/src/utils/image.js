@@ -5,7 +5,7 @@
 // sin desbordarse ni deformarse.
 
 const CARD_RATIO = 1.586; // ancho / alto
-const TARGET_WIDTH = 1200;
+const TARGET_WIDTH = 1600;
 const TARGET_HEIGHT = Math.round(TARGET_WIDTH / CARD_RATIO);
 
 export function processCardImage(file) {
@@ -24,6 +24,12 @@ export function processCardImage(file) {
           ctx.imageSmoothingEnabled = true;
           ctx.imageSmoothingQuality = 'high';
 
+          // Muchas fotos/logos (PNG, WEBP, etc.) tienen fondo transparente.
+          // JPEG no soporta transparencia: sin este relleno, esas zonas se
+          // pintan de negro solas al exportar. Lo dejamos blanco primero.
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, TARGET_WIDTH, TARGET_HEIGHT);
+
           const srcRatio = img.width / img.height;
           let sx, sy, sw, sh;
           if (srcRatio > CARD_RATIO) {
@@ -41,7 +47,7 @@ export function processCardImage(file) {
           }
 
           ctx.drawImage(img, sx, sy, sw, sh, 0, 0, TARGET_WIDTH, TARGET_HEIGHT);
-          resolve(canvas.toDataURL('image/jpeg', 0.92));
+          resolve(canvas.toDataURL('image/jpeg', 0.95));
         } catch (err) {
           reject(err);
         }

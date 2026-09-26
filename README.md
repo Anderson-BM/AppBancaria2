@@ -26,7 +26,7 @@ server/src/
   db.js         -> conexión a Neon
   migrate.js    -> crea las tablas automáticamente al arrancar
   auth.js       -> sesión por cookie (JWT)
-  routes/       -> auth, cards, expenses, fixedExpenses, settings, backup
+  routes/       -> auth, cards, expenses, fixedExpenses, settings
 ```
 
 ## 1. Crear tu base de datos en Neon
@@ -102,10 +102,9 @@ información.
   otro dispositivo tienes que volver a meter el PIN, pero los datos que ves
   son siempre los mismos.
 - **Imágenes de tarjeta:** se siguen procesando en el navegador (recorte a
-  HD, proporción de tarjeta real) antes de subirse, así que no pesan de
-  más en la base de datos.
-- **Respaldo:** el botón ⬇ ahora descarga un JSON generado directamente
-  desde la base de datos (ruta `/api/backup`).
+  HD, proporción de tarjeta real, fondo blanco si la foto tiene
+  transparencia) antes de subirse, así que no pesan de más en la base de
+  datos.
 
 ## Variables de entorno del servidor
 
