@@ -1,0 +1,12 @@
+.vs/
+.env/
+bin/
+obj/
+*.log
+*.tmp
+.vs/
+.env/
+bin/
+obj/
+*.log
+*.tmp

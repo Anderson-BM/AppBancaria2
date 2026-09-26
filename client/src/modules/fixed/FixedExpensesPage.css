@@ -1,0 +1,93 @@
+.fixed-page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+/* Tarjeta de resumen (total vs. límite) — mismo estilo que el
+   resumen de tarjetas, definido aquí también para que este módulo
+   no dependa de que se haya cargado el módulo de dashboard. */
+.summary-limit-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 18px 18px 16px;
+}
+
+.summary-limit-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.summary-spent {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text-primary);
+}
+
+.summary-spent--over {
+  color: var(--danger);
+}
+
+.bar-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  transition: width 0.3s ease;
+}
+
+.bar-fill--warning {
+  background: linear-gradient(90deg, var(--orange), var(--orange-light));
+}
+
+.bar-fill--danger {
+  background: linear-gradient(90deg, var(--danger), #ff8a83);
+}
+
+.summary-limit-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.fixed-limit-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fixed-limit-edit input {
+  width: 76px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 3px 6px;
+  color: var(--text-primary);
+  font-size: 13px;
+  text-align: right;
+  outline: none;
+}
+
+.fixed-limit-edit input:focus {
+  border-color: var(--teal);
+}

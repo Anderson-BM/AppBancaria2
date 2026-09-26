@@ -1,0 +1,47 @@
+.editable-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.editable-name-text {
+  border-bottom: 1px dashed transparent;
+}
+
+.editable-name:hover .editable-name-text {
+  border-bottom-color: var(--border-strong);
+}
+
+.editable-name-pencil {
+  font-size: 13px;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.editable-name:hover .editable-name-pencil,
+.editable-name:focus-visible .editable-name-pencil {
+  opacity: 1;
+}
+
+.editable-name-input {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--teal);
+  border-radius: 8px;
+  padding: 2px 8px;
+  outline: none;
+  max-width: 220px;
+}
