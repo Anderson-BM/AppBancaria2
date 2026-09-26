@@ -1,0 +1,141 @@
+:root {
+  /* Paleta inspirada en tu tarjeta ISI: turquesa + naranja sobre fondo azul noche */
+  --bg-deep: #0c1626;
+  --bg-panel: #121f34;
+  --bg-panel-alt: #16273f;
+  --bg-elevated: #1b2e4a;
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --teal: #1fb6ad;
+  --teal-light: #4fd6cc;
+  --teal-dim: rgba(31, 182, 173, 0.18);
+
+  --orange: #f5a623;
+  --orange-light: #ffc25c;
+  --orange-dim: rgba(245, 166, 35, 0.18);
+
+  --text-primary: #f1f6fa;
+  --text-secondary: #a9bacb;
+  --text-muted: #708299;
+
+  --danger: #e0615a;
+  --danger-dim: rgba(224, 97, 90, 0.16);
+  --success: #4fcf8f;
+  --success-dim: rgba(79, 207, 143, 0.16);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-card: 0 20px 40px -18px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 8px 24px -10px rgba(0, 0, 0, 0.4);
+  --body-glow-start: #14263f;
+  --on-accent: #06201d;
+  --accent-ink: var(--teal-light);
+
+  --font-display: 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  color-scheme: dark;
+}
+
+/* Modo claro: fondo blanco, bordes y botones naranjas */
+:root[data-theme='light'] {
+  --bg-deep: #ffffff;
+  --bg-panel: #ffffff;
+  --bg-panel-alt: #ffffff;
+  --bg-elevated: #ffffff;
+  --border-soft: rgba(245, 166, 35, 0.38);
+  --border-strong: rgba(245, 166, 35, 0.7);
+
+  --teal: var(--orange);
+  --teal-light: var(--orange-light);
+  --teal-dim: var(--orange-dim);
+  --on-accent: #ffffff;
+  --accent-ink: #b25f00;
+
+  --text-primary: #1c2430;
+  --text-secondary: #5b6674;
+  --text-muted: #93a0ad;
+
+  --danger: #d1453e;
+  --danger-dim: rgba(209, 69, 62, 0.1);
+  --success: #2e9f6c;
+  --success-dim: rgba(46, 159, 108, 0.1);
+
+  --shadow-card: 0 16px 32px -20px rgba(15, 23, 42, 0.16);
+  --shadow-soft: 0 8px 20px -14px rgba(15, 23, 42, 0.12);
+  --body-glow-start: #ffffff;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 15% 0%, var(--body-glow-start) 0%, var(--bg-deep) 55%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--teal-dim);
+}
+
+/* Scrollbar discreto para paneles con overflow */
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+.scroll-x::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-x::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

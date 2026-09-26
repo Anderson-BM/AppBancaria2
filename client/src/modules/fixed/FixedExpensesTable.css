@@ -1,0 +1,8 @@
+.fixed-row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.fixed-row:hover {
+  background: var(--bg-elevated);
+}
