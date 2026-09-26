@@ -1,12 +1,15 @@
-.vs/
-.env/
-bin/
-obj/
+# Dependencias
+client/node_modules
+server/node_modules
+
+# Build del cliente
+client/dist
+
+# Variables de entorno (¡contiene tu contraseña de Neon!)
+.env
+server/.env
+
+# Varios
+.DS_Store
+*.local
 *.log
-*.tmp
-.vs/
-.env/
-bin/
-obj/
-*.log
-*.tmp
